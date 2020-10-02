@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <title>标题</title>
+        <script type="application/javascript">
+            /**
+             * var 
+             *  1. 声明的是全局变量, 没有作用域范围
+             *  2. 可以重复定义同一个变量, 后定义的变量会覆盖之前的值 
+             * 
+             * let 
+             *  2. 声明的是局部变量, 有作用域范围
+             *  2. 不能重复定义同一个变量. 报错: Uncaught SyntaxError: Identifier 'b' has already been declared
+             * 
+             */
+            // {
+            //     var a = 10;
+            //     let b = 10;
+            // }
+
+            // var a = 1;
+            // var a = 2;
+            // let b = 10;
+            // let b = 20;
+            // console.log(a)
+            // console.log(b)
+
+            //**************************常量**********************************
+            /**
+             * const: 定义常量
+             * 常量值在被定义是必须初始化, 且后面不能再被更改
+             */ 
+            // const PI = 3.14
+            // console.log(PI)
+            // console.log(PI + 1)
+            // // PI += 1;        // Uncaught TypeError: Assignment to constant variable.
+            // const pi
+            // console.log(PI)    // Uncaught SyntaxError: Missing initializer in const declaration
+
+
+            //****************************解构************************************
+            // // 1. 数组结构
+            // // 传统写法
+            // let a = 1, b = 2, c = 3
+            // console.log(a, b, c)
+
+            // // ES6
+            // let [x, y, z] = [10, 20, 30]
+            // console.log(x, y, z)
+
+            // 2. 对象解构
+            // let user = {name: "张三", age: 18}
+            // // 传统
+            // let name1 = user.name
+            // let age1 = user.age
+            // console.log(name1, age1)
+
+            // // ES6
+            // let {name, age} = user  // 注意结构的变量必须与user中的属性名保持一致
+            // console.log(name, age)
+
+
+            //***************************模板字符串*******************************
+            // // 1. ` ... `: 可以实现字符串换行操作
+            // let user1 = `hello
+            //     world`;
+            // console.log(user1)
+            
+            // let name = "张三";
+            // let age = 24;
+            // // 2. 在` ... `中可以使用表达式来获取变量的值 ${}
+            // let info = `姓名是 ${name}, 年龄是${age}`
+            // console.log(info)
+
+            // // // 3. 在`符号调用方法
+            // function f1(a, b){
+            //     return a + b
+            // }
+
+            // let res = `demo, ${f1(145, 2)}`;
+            // console.log(res);
+
+            // *************************定义对象***************************
+            // const name = "Tom"
+            // const age = 23
+            // // 传统方法:
+            // let user1 = {name: name, age: age}
+            // console.log(user1)
+
+            // // ES6
+            // let user2 = {name, age}
+            // console.log(user2)
+
+            // ************************定义方法****************************
+            // 传统
+            // const p1 = {
+            //     sayHi: function(){
+            //         console.log("hello p1")
+            //     }
+            // }
+            // p1.sayHi();
+            
+            // // ES6
+            // const p2 = {
+            //     sayHi(){
+            //         console.log("hello p2")
+            //     }
+            // }
+            // p2.sayHi();
+
+            // ***********************对象扩展运算符*************************
+            // // 1. 拷贝对象
+            // let u1 = {name: "张三", age: 23}
+            // let u3 = {...u1}
+            // u1.age=34
+            // console.log(u1) // {name: "张三", age: 34}
+            // console.log(u3) // {name: "张三", age: 23}
+            // // 2. 合并对象
+            // let u2 = {hobby: ["音乐, 电影"], address: "四川.成都"}
+            // let res = {...u1, ...u2}    // {name: "张三", age: 23, hobby: Array(1), address: "四川.成都"}
+            // console.log(res)
+
+            // ***********************箭头函数******************************
+            // 传统方法
+            let func1 = function(a, b){
+                return a + b
+            }
+
+            // ES6
+            let func2 = (a, b) => a + b
+
+            console.log(func1(4, 5))
+            console.log(func2(4, 5))
+            
+
+
+        </script>
+    </head>
+
+    <body>
+        Hello World
+    
+    </body>
+    
+</html>

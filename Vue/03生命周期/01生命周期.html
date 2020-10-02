@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="update">update</button>
+        <h3>{{message}}</h3>
+        <button @click="show">show</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: "床前明月光"
+            },
+            methods: {
+                show() {
+                    console.log("执行show方法")
+                },
+                update(){
+                    this.message = "疑是地上霜"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

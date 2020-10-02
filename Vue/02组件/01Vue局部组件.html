@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <Navbar></Navbar>
+        <bar></bar>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            components: {
+                // 命名只有首字母是大写, 如果有多个大写字母会识别不了
+                'Navbar': {
+                    template: '<ul><li>首页</li><li>学员管理</li></ul>'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
