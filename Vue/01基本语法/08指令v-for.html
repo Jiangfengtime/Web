@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="n in 3">{{n}}</li>
+        </ul>
+        <hr/>
+        <ul>
+            <!-- 第一个参数是元素, 第二个参数是下标 -->
+            <li v-for="(ele, index) in 3">{{index}} --- {{ele}}</li>
+        </ul>
+        <hr/>
+        <ul>
+            <li v-for="(ele, index) in userList">{{index}} === {{ele}}</li>
+        </ul>
+        <hr/>
+        <table border="1px">
+            <tr v-for="item in userList">
+                <td>{{item.id}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.age}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                userList: [
+                    {id: 1, username: "zhangsan", age: 25},
+                    {id: 2, username: "lisi", age: 19},
+                    {id: 3, username: "wangwu", age: 32}
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

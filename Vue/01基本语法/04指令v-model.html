@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 双向数据绑定和单向数据绑定：使用 v-model 进行双向数据绑定 -->
+    <div id="app">
+        <!-- 1.不同文本框 -->
+        <input type="text" v-model="message"/>
+        <input type="text" :value="message"/>
+        <p>要查询的内容是: {{message}}</p>
+        <hr/>
+
+        <!-- 2.下拉框 -->
+        <select v-model="selected">
+            <option disabled value="">===请选择===</option>
+            <option value = "A">A</option>
+            <option value = "B">B</option>
+            <option value = "C">C</option>
+        </select>
+        <br/>
+        选中了: {{selected}}
+        <hr/>
+
+        <!-- 3.单选按钮 -->
+        <input type="radio" v-model="sex" value="男" />男<br/>
+        <input type="radio" v-model="sex" value="女" />女<br/>
+        性别: {{sex}}
+        <hr/>
+        <!-- 4.多选按钮 -->
+        <input type="checkbox" v-model="hobby" value="香蕉" /> 香蕉<br/>
+        <input type="checkbox" v-model="hobby" value="苹果" /> 苹果<br/>
+        <input type="checkbox" v-model="hobby" value="葡萄" /> 葡萄<br/>
+        爱好: {{hobby}}
+        <hr/>
+        <!-- 5.多行文本 -->
+        <textarea v-model="context"></textarea> <br/>
+        文本内容: {{context}}
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: "",
+                selected: "A" , // 默认选中
+                sex: "女",
+                hobby: [],
+                context: ""
+            }
+        })
+    </script>
+</body>
+
+</html>
